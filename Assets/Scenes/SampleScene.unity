@@ -670,6 +670,7 @@ GameObject:
   - component: {fileID: 1151220990}
   - component: {fileID: 1151220994}
   - component: {fileID: 1151220995}
+  - component: {fileID: 1151220996}
   m_Layer: 0
   m_Name: Head
   m_TagString: Player
@@ -815,6 +816,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1151220996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151220989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 943475efef308108f89fc0ee90fc7a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Movement
+  speed: 10
 --- !u!1 &1530952461
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,39 +875,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ObstaclesSpawner
   obj: {fileID: 6586870167133677188, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
   timer: 1
---- !u!1001 &7632635433223441614
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2374774943751240790, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374774943751240790, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374774943751240790, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374774943751240790, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6586870167133677188, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
-      propertyPath: m_Name
-      value: Car
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0dbc21c9b38e6043a8640641b3e667b3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -901,5 +882,4 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1151220993}
-  - {fileID: 7632635433223441614}
   - {fileID: 1530952462}
