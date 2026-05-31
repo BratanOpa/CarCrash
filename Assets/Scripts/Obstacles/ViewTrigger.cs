@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ViewTrigger : MonoBehaviour
 {
+    public float offset; // AngleDeleteOffset
+
     Camera cam;
 
     void Start()
@@ -13,24 +15,31 @@ public class ViewTrigger : MonoBehaviour
     {
         Vector3 vp = cam.WorldToViewportPoint(transform.position);
         bool visible =
-            vp.z > 0 &&
-            vp.x >= 0 && vp.x <= 1 &&
-            vp.y >= 0 && vp.y <= 1;
+            vp.z > -offset &&
+            vp.x >= -offset && vp.x <= 1 +offset &&
+            vp.y >= -offset && vp.y <= 1 +offset;
 
         if (visible)
         {
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        print("TriggerEnter");
         if(other.tag == "Player")
         {
             MouseRotation mr = other.GetComponent<MouseRotation>();
             mr.SetFocusObject(transform);
-            print("SetFocus");
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            MouseRotation mr = other.GetComponent<MouseRotation>();
+            mr.SetFocusObject(null);
         }
     }
 
