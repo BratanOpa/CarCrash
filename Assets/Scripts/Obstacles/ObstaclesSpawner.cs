@@ -17,9 +17,9 @@ public class ObstaclesSpawner : MonoBehaviour
         if(timer1 + timer < Time.time)
         {
             timer1 = Time.time;
-            obj.transform.position = transform.position;
-            obj.transform.rotation = transform.rotation;
-            Instantiate(obj);
+            GameObject car = Instantiate(obj);
+            car.transform.position = transform.position;
+            car.transform.rotation = transform.rotation;
         }
     }
 }

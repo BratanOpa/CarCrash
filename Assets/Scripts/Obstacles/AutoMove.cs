@@ -9,9 +9,8 @@ public class AutoMove : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position += moveDirection;
+        transform.localPosition += transform.TransformDirection(moveDirection);
     }
 }

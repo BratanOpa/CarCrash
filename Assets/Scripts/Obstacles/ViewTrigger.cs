@@ -2,16 +2,31 @@ using UnityEngine;
 
 public class ViewTrigger : MonoBehaviour
 {
-    public float offset; // AngleDeleteOffset
 
+    //View trigger
+    public float offset;
     Camera cam;
+
+    //Collider Trigger
+    Renderer rend;
+
+    bool deleteAtView = true;
 
     void Start()
     {
         cam = Camera.main;
+        rend = GetComponent<Renderer>();
     }
 
     void Update()
+    {
+        if (deleteAtView)
+        {
+            ViewDelete();
+        }
+    }
+
+    void ViewDelete()
     {
         Vector3 vp = cam.WorldToViewportPoint(transform.position);
         bool visible =
@@ -27,6 +42,7 @@ public class ViewTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        deleteAtView = false;
         if(other.tag == "Player")
         {
             MouseRotation mr = other.GetComponent<MouseRotation>();
